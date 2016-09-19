@@ -1,9 +1,7 @@
-[![Build Status](https://travis-ci.org/blockchain-certificates/cert-issuer-identity.svg?branch=master)](https://travis-ci.org/blockchain-certificates/cert-issuer-identity)
-[![](https://images.microbadger.com/badges/version/blockcerts/certintro_web.svg)](http://microbadger.com/images/blockcerts/certintro_web "Get your own version badge on microbadger.com")
 
 # cert-issuer-identity
 
-Blockchain certificate introduction service
+Blockchain certificate identity service
 
 
 ## Quick Start with Docker
@@ -43,7 +41,7 @@ Blockchain certificate introduction service
     pip install -r requirements.txt
     ```
 
-4. Setup your conf.py file
+4. Setup your config.py file
     
 5. To run the server, please execute the following:
     ```bash
@@ -60,7 +58,7 @@ http://localhost:5002/ui/
 
 The API documentation is currently hosted here:
 
-[http://cert-issuer-identity.herokuapp.com/ui/](http://cert-issuer-identity.herokuapp.com/intro/ui/)
+[http://cert-issuer-identity.herokuapp.com/ui/](http://cert-issuer-identity.herokuapp.com/ui/)
 
 Updates coming soon!
 

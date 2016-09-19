@@ -13,10 +13,11 @@ host: "cert-intro.herokuapp.com"
 schemes:
 - "http"
 - "https"
-consumes:
-- "application/json"
 produces:
 - "application/json"
+- "application/xml"
+- "text/xml"
+- "text/html"
 paths:
   /criteria/{year}/{month}/{criteriaName}:
     get:
@@ -58,3 +59,22 @@ paths:
       responses:
         200:
           description: "Sends the issuer file at the specied path"
+  /keys/{keyName}:
+    get:
+      tags:
+      - "default_controller"
+      operationId: "cert_issuer_identity.controllers.default_controller.issuer_key_get"
+      produces:
+      - "application/json"
+      - "application/xml"
+      - "text/xml"
+      - "text/html"
+      parameters:
+      - name: "keyName"
+        in: "path"
+        description: "issuer key name"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Sends the issuer key at the specied path"

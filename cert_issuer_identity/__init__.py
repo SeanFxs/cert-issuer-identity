@@ -3,7 +3,7 @@ import logging
 import connexion
 import os
 
-from . import conf
+from . import config
 
 app = connexion.App(__name__, specification_dir='./swagger/')
 app.add_api('swagger.yaml', arguments={
@@ -12,8 +12,8 @@ app.add_api('swagger.yaml', arguments={
 
 def initialize_logger():
     """Configure logging settings"""
-    log_output_dir = conf.log_dir
-    log_file_name = conf.log_file_name
+    log_output_dir = config.log_dir
+    log_file_name = config.log_file_name
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
 
