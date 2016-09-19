@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/blockchain-certificates/cert-intro.svg?branch=master)](https://travis-ci.org/blockchain-certificates/cert-intro)
+[![Build Status](https://travis-ci.org/blockchain-certificates/cert-issuer-identity.svg?branch=master)](https://travis-ci.org/blockchain-certificates/cert-issuer-identity)
 [![](https://images.microbadger.com/badges/version/blockcerts/certintro_web.svg)](http://microbadger.com/images/blockcerts/certintro_web "Get your own version badge on microbadger.com")
 
-# cert-intro
+# cert-issuer-identity
 
 Blockchain certificate introduction service
 
@@ -13,13 +13,13 @@ Blockchain certificate introduction service
 2. Git clone the repository
 
     ```
-    git clone https://github.com/blockchain-certificates/cert-intro.git
+    git clone https://github.com/blockchain-certificates/cert-issuer-identity.git
     ```
 
-3. From a command line in the cert-intro dir, run docker-compose
+3. From a command line in the cert-issuer-identity dir, run docker-compose
 
     ```
-    cd cert-intro
+    cd cert-issuer-identity
     docker-compose build
     ```
 
@@ -29,7 +29,7 @@ Blockchain certificate introduction service
     docker-compose up
     ```
 
-5. Access cert-intro at `http://localhost:5001`.
+5. Access cert-issuer-identity at `http://localhost:5002`.
 
 
 ## Running the CLI locally
@@ -43,29 +43,24 @@ Blockchain certificate introduction service
     pip install -r requirements.txt
     ```
 
-4. Setup your conf.ini file (see 'Configuration')
-
-5. Start mongo database. `--dbpath` can be left off if you used the default location
-    ```bash
-    mongod --dbpath <path to data directory>
-    ```
+4. Setup your conf.py file
     
-6. To run the server, please execute the following:
+5. To run the server, please execute the following:
     ```bash
-python cert-provider/app.py
+    python cert-issuer-identity/app.py
     ```
 
 You can see the Swagger API specification at this URL:
 
 ```
-http://localhost:5001/ui/
+http://localhost:5002/ui/
 ```
 
 ## API Documentation
 
 The API documentation is currently hosted here:
 
-[http://cert-intro.herokuapp.com/intro/ui/](http://cert-intro.herokuapp.com/intro/ui/)
+[http://cert-issuer-identity.herokuapp.com/ui/](http://cert-issuer-identity.herokuapp.com/intro/ui/)
 
 Updates coming soon!
 
@@ -83,9 +78,9 @@ This project uses tox to validate against several python environments.
 ## Release Docker image
 
 ```
-docker build -t blockcerts/certintro_web:<version> .
+docker build -t blockcerts/certissueridentity_web:<version> .
 docker login
-docker push blockcerts/certintro_web:<version>
+docker push blockcerts/certissueridentity_web:<version>
 ```
 
 
