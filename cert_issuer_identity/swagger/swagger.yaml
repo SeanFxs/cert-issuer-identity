@@ -1,0 +1,60 @@
+---
+swagger: "2.0"
+info:
+  description: "API Specification for identifying a Blockchain Certificate issuer.\
+    From this endpoint you can find an issuer's public blockchain addresses, introduction endpoint, and certificate\
+     criteria."
+  version: "1.0.0"
+  title: "Blockchain Certificate Issuer Identity"
+  license:
+    name: "MIT"
+    url: "http://opensource.org/licenses/MIT"
+host: "cert-intro.herokuapp.com"
+schemes:
+- "http"
+- "https"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /criteria/{year}/{month}/{criteriaName}:
+    get:
+      tags:
+      - "default_controller"
+      operationId: "cert_issuer_identity.controllers.default_controller.criteria_year_month_criteria_name_get"
+      parameters:
+      - name: "year"
+        in: "path"
+        description: "year"
+        required: true
+        type: "string"
+        pattern: "^[0-9]{4}$"
+      - name: "month"
+        in: "path"
+        description: "month"
+        required: true
+        type: "string"
+        pattern: "^[0-9]{2}$"
+      - name: "criteriaName"
+        in: "path"
+        description: "criteriaName"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Sends the criteria file at the specied path"
+  /issuer/{issuerFilename}:
+    get:
+      tags:
+      - "default_controller"
+      operationId: "cert_issuer_identity.controllers.default_controller.issuer_issuer_filename_get"
+      parameters:
+      - name: "issuerFilename"
+        in: "path"
+        description: "issuer file name"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Sends the issuer file at the specied path"

@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+
+  web:
+    build: .
+    image: cert-issuer-identity:latest
+    command: python -u /cert-issuer-identity/run.py
+    volumes:
+      - .:/code
+    ports:
+      - "5002:5002"
+
+
